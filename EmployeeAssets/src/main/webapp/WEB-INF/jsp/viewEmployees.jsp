@@ -50,7 +50,7 @@
 							<tr>
 								<td>${phones.phoneMake}</td>
 								<td>${phones.phoneImei}</td>
-								<td><a href="deletePhone"><input type="button" value = "Remove phone" class="btn" /></a></td>
+								<td><a href="deletePhone${phones.phoneImei}"><input type="button" value = "Remove phone" class="btn" /></a></td>
 							</tr>
 						</c:forEach>
 						

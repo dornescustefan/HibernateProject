@@ -17,5 +17,9 @@ public class PhoneServiceImpl implements PhoneService{
 	public Phone savePhone(Phone phone) {
 		return phoneRepository.save(phone);
 	}
+	
+	public void deletePhone(String phoneImei) {
+		phoneRepository.deleteById(phoneImei);
+	} 
 
 }

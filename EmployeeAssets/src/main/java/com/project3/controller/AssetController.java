@@ -12,6 +12,7 @@ import com.project3.model.Employee;
 import com.project3.model.LapTop;
 import com.project3.model.Phone;
 import com.project3.service.EmployeeService;
+import com.project3.service.PhoneService;
 
 @Controller
 public class AssetController {
@@ -19,7 +20,11 @@ public class AssetController {
 	@Autowired
 	EmployeeService employeeService;
 	
+	@Autowired
+	PhoneService phoneService;
+	
 	ModelAndView mv = new ModelAndView();
+	//Retrieve employee to add phone
 	@RequestMapping(value="/addPhone{id}", method = RequestMethod.GET)
 	public ModelAndView addPhone(@ModelAttribute("savePhoneForm")Phone phone, @PathVariable Long id) {
 		Employee employee = employeeService.findEmployeeById(id);
@@ -29,6 +34,7 @@ public class AssetController {
 		return mv;
 	}
 	
+	//Save phone for an Employee
 	@RequestMapping(value="/savePhone", method=RequestMethod.POST)
 	public ModelAndView savePhone(@ModelAttribute("savePhoneForm")Phone phone, @ModelAttribute("employee")Employee employee ) 
 		{
@@ -40,7 +46,14 @@ public class AssetController {
 		return new ModelAndView("redirect:/"); 
 	}
 	
+	//Delete phone
+	@RequestMapping(value="/deletePhone{phoneImei}", method=RequestMethod.GET)
+	public ModelAndView deletePhoneByImei(@PathVariable String phoneImei) {
+		phoneService.deletePhone(phoneImei);
+		return new ModelAndView("redirect:/viewEmployees"); 
+	}
 	
+	//Retrieve employee to add LapTop	
 	@RequestMapping(value="/addLaptop{id}", method = RequestMethod.GET)
 	public ModelAndView addLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @PathVariable Long id) {
 		Employee employee = employeeService.findEmployeeById(id);
@@ -48,9 +61,9 @@ public class AssetController {
 		mv.addObject("name", employee.getName());
 		mv.addObject("id", employee.getId());
 		return mv;
-		//return new ModelAndView("addLaptop");
 	}
 	
+	//Save LapTop for an Employee
 	@RequestMapping(value="/saveLaptop", method=RequestMethod.POST)
 	public ModelAndView saveLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @ModelAttribute("anemployee")Employee anemployee ) 
 		{
@@ -61,4 +74,5 @@ public class AssetController {
 		employeeService.save(anemployee);
 		return new ModelAndView("redirect:/"); 
 	}
+	
 }

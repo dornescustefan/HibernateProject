@@ -38,7 +38,7 @@ public class EmployeeController {
 		    return new ModelAndView( "viewEmployees", "employeeList", employeeList);
 	}
 	
-	@RequestMapping(value="delete{id}", method = RequestMethod.GET) 
+	@RequestMapping(value="/delete{id}", method = RequestMethod.GET) 
 	public ModelAndView deleteEmployee(@PathVariable Long id){
 		   employeeService.deleteEmployee(id);
 		   return new ModelAndView("redirect:/viewEmployees"); 
