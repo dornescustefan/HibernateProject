@@ -34,4 +34,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return employee;
 		}
 
+		public void updateEmployee(Employee employee) {
+			
+			employeeRepository.getOne(employee.getId()).getAddress().toLowerCase();
+			
+		}
+
 }

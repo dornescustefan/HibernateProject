@@ -38,8 +38,10 @@
    		<td>${employees.email}</td> 
    		<td><a href="addPhone${employees.id}"><input type="button" value = "Add phone" class="btn" /><br><br>
    		    <a href="addLaptop${employees.id}"><input type="button" value = "Add laptop" class="btn" />
-   		</a></td>
-   		<td><a href="delete${employees.id}"><input type="button" value = "Delete Employee" class="btn" /></a></td>
+   		</td>
+   		<td><a href="delete${employees.id}"><input type="button" value = "Delete Employee" class="btn" /><br><br>
+   			<a href="editEmployee${employees.id}"><input type="button" value = "Edit Employee" class="btn" />
+   		</td>
    		
    	<td>
 					<table class="table table-bordered">

@@ -10,4 +10,5 @@ public interface EmployeeService {
 	List<Employee> findAllEmployees();
     Employee findEmployeeById(Long id);
     Employee save(Employee employee);
+	void updateEmployee(Employee employee);
 }
