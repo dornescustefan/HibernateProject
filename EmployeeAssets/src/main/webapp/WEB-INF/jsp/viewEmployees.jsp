@@ -61,7 +61,7 @@
 							<tr>
 								<td>${laptops.make}</td>
 								<td>${laptops.serialNumber}</td>
-								<td><a href="deleteLaptop"><input type="button" value = "Remove laptop" class="btn" /></a></td>
+								<td><a href="deleteLapTop${laptops.serialNumber}"><input type="button" value = "Remove laptop" class="btn" /></a></td>
 							</tr>
 						</c:forEach>
 						

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.project3.model.LapTop;
 
 @Repository("laptopRepository")
-public interface LapTopRepository extends JpaRepository<LapTop, Long>{
+public interface LapTopRepository extends JpaRepository<LapTop, String>{
 
 }

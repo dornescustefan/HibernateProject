@@ -12,6 +12,7 @@ import com.project3.model.Employee;
 import com.project3.model.LapTop;
 import com.project3.model.Phone;
 import com.project3.service.EmployeeService;
+import com.project3.service.LapTopService;
 import com.project3.service.PhoneService;
 
 @Controller
@@ -22,6 +23,9 @@ public class AssetController {
 	
 	@Autowired
 	PhoneService phoneService;
+	
+	@Autowired
+	LapTopService lapTopService;
 	
 	ModelAndView mv = new ModelAndView();
 	//Retrieve employee to add phone
@@ -74,5 +78,12 @@ public class AssetController {
 		employeeService.save(anemployee);
 		return new ModelAndView("redirect:/"); 
 	}
+	
+	//Delete LapTop
+		@RequestMapping(value="/deleteLapTop{serialNumber}", method=RequestMethod.GET)
+		public ModelAndView deleteLaptopBySerialNumber(@PathVariable String serialNumber) {
+			lapTopService.deleteLapTop(serialNumber);
+			return new ModelAndView("redirect:/viewEmployees"); 
+		}
 	
 }
