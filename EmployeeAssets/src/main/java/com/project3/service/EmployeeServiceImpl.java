@@ -35,9 +35,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 
 		public void updateEmployee(Employee employee) {
-			
-			employeeRepository.getOne(employee.getId()).getAddress().toLowerCase();
-			
+			 String name = employee.getName();
+			 String address = employee.getAddress();
+			 String email = employee.getEmail();
+			 String photo = employee.getPhoto();
+			 Long id = employee.getId();
+			 System.out.println(name);
+			 String a = "alma";
+			 Long b = (long) 1;
+		      employeeRepository.updateEmployee(a, b);
+				
 		}
 
 }
