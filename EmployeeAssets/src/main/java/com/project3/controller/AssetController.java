@@ -30,7 +30,7 @@ public class AssetController {
 	ModelAndView mv = new ModelAndView();
 	//Retrieve employee to add phone
 	@RequestMapping(value="/addPhone{id}", method = RequestMethod.GET)
-	public ModelAndView addPhone(@ModelAttribute("savePhoneForm")Phone phone, @PathVariable Long id) {
+	public ModelAndView addPhone(@ModelAttribute("savePhoneForm")Phone phone, @PathVariable int id) {
 		Employee employee = employeeService.findEmployeeById(id);
 		mv.setViewName("addPhone");
 		mv.addObject("name", employee.getName());
@@ -42,7 +42,7 @@ public class AssetController {
 	@RequestMapping(value="/savePhone", method=RequestMethod.POST)
 	public ModelAndView savePhone(@ModelAttribute("savePhoneForm")Phone phone, @ModelAttribute("employee")Employee employee ) 
 		{
-		Long id = (Long) mv.getModel().get("id");
+		int id = (Integer) mv.getModel().get("id");
 		employee = employeeService.findEmployeeById(id);
 		employee.getPhones().add(phone);
 		phone.setEmployee(employee);
@@ -59,7 +59,7 @@ public class AssetController {
 	
 	//Retrieve employee to add LapTop	
 	@RequestMapping(value="/addLaptop{id}", method = RequestMethod.GET)
-	public ModelAndView addLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @PathVariable Long id) {
+	public ModelAndView addLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @PathVariable int id) {
 		Employee employee = employeeService.findEmployeeById(id);
 		mv.setViewName("addLaptop");
 		mv.addObject("name", employee.getName());
@@ -71,7 +71,7 @@ public class AssetController {
 	@RequestMapping(value="/saveLaptop", method=RequestMethod.POST)
 	public ModelAndView saveLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @ModelAttribute("anemployee")Employee anemployee ) 
 		{
-		Long id = (Long) mv.getModel().get("id");
+		int id = (Integer) mv.getModel().get("id");
 		anemployee = employeeService.findEmployeeById(id);
 		anemployee.getLaptops().add(laptop);
 		laptop.setEmployee(anemployee);

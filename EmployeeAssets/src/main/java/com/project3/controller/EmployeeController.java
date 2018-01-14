@@ -43,14 +43,14 @@ public class EmployeeController {
 	
 	//Delete Employee By ID
 	@RequestMapping(value="/delete{id}", method = RequestMethod.GET) 
-	public ModelAndView deleteEmployee(@PathVariable Long id){
+	public ModelAndView deleteEmployee(@PathVariable int id){
 		   employeeService.deleteEmployee(id);
 		   return new ModelAndView("redirect:/viewEmployees"); 
 	}
 	
 	//Edit existing Employee after Id
 	@RequestMapping(value="editEmployee{id}", method = RequestMethod.GET)
-	public ModelAndView editEmployee(@PathVariable Long id) {
+	public ModelAndView editEmployee(@PathVariable int id) {
 		Employee anEmployee = employeeService.findEmployeeById(id);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("editEmployee");

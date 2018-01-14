@@ -24,11 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return employeeRepository.findAll();
 		}
 		
-		public void deleteEmployee(Long id) {
+		public void deleteEmployee(int id) {
 			employeeRepository.deleteById(id);
 		}
 
-		public Employee findEmployeeById(Long id) {
+		public Employee findEmployeeById(int id) {
 		    Employee employee = new Employee();
 			employee = employeeRepository.getOne(id);
 			return employee;
@@ -39,11 +39,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 			 String address = employee.getAddress();
 			 String email = employee.getEmail();
 			 String photo = employee.getPhoto();
-			 Long id = employee.getId();
-			 System.out.println(name);
-			 String a = "alma";
-			 Long b = (long) 1;
-		      employeeRepository.updateEmployee(a, b);
+			 int id = employee.getId();
+			 employeeRepository.updateEmployee(name, address, email, photo, id);
 				
 		}
 

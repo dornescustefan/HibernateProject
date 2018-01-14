@@ -19,7 +19,7 @@ public class Employee {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	private Long id;
+	private int id;
 
 	@Column(name="name")
 	private String name;
@@ -39,11 +39,11 @@ public class Employee {
 	@OneToMany (mappedBy = "employee", cascade=CascadeType.ALL, fetch = FetchType.LAZY )
 	private List<LapTop> laptops = new ArrayList<LapTop>();
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

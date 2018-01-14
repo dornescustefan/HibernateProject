@@ -9,12 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project3.model.Employee;
 
 @Repository("employeeRepository")
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 @Modifying
 @Transactional
 @Query
-("update com.project3.model.Employee e set e.name = ?1 where e.id = ?2")
-int updateEmployee(String name, Long id);
+("update com.project3.model.Employee e set e.name = ?1, e.address=?2, e.email=?3, e.photo=?4 where e.id = ?5")
+int updateEmployee(String name, String address, String email, String photo, int id);
 	
 }

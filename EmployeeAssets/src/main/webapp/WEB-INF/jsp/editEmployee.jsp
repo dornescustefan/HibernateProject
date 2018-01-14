@@ -19,9 +19,10 @@
 <div class="col-sm-4"></div>
 <div class="col-sm-4">
 
-<h3>Edit employee:</h3><br>
 
+<h3>Edit employee:</h3><br>
 <form:form action="saveEditedEmployee" modelAttribute="editEmployeeForm" method="POST" >
+		<form:input path="id"  id="id"  type="hidden"/>
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
          	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>
