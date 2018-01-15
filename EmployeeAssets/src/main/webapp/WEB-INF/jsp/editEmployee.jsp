@@ -13,6 +13,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>AddEmployee</title>
+<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+ </style>
 </head>
 <body>
 <div class="container" >
@@ -26,21 +31,25 @@
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
          	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>
+         	<form:errors path="name"  cssClass="error"/>
 		</div>
             
         <div class="form-group"> 
        		<label  for="address" >Employee address:</label>
          	<form:input type="text" path="address" id="address" class="form-control" placeholder="Employee Address" />
+         	<form:errors path="address"  cssClass="error"/>
 		</div>    
         
         <div class="form-group"> 
        		<label  for="email" >Employee email:</label>
          	<form:input type="text" path="email" id="email" class="form-control"  placeholder="address@email.com" />
+         	<form:errors path="email"  cssClass="error"/>
 		</div>
 		
 		 <div class="form-group"> 
-       		<label  for="email" >Employee photo URL:</label>
+       		<label  for="photo" >Employee photo URL:</label>
          	<form:input type="text" path="photo" id="photo" class="form-control"  placeholder="Employee Photo URL" />
+         	<form:errors path="photo"  cssClass="error"/>
 		</div>        
         <button type="submit" class="btn btn-default">Save employee</button>
  </form:form>

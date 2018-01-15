@@ -13,6 +13,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>AddPhone</title>
+<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+ </style>
 </head>
 <body>
 <div class="container" >
@@ -31,11 +36,12 @@ ${id} ${name}</h3>
 			<option >Sony ericsson</option>
 			<option >Iphone</option>
 			</form:select>
+			<form:errors path="phoneMake"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
        		<label >Phone imei:</label>
          	<form:input path="phoneImei" id="phoneImei" type="text" class="form-control" />
-         	
+         	<form:errors path="phoneImei"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add phone</button>

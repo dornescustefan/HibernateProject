@@ -11,6 +11,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 @Entity
 @Table (name="employees")
@@ -22,15 +27,21 @@ public class Employee {
 	private int id;
 
 	@Column(name="name")
+	@NotEmpty
 	private String name;
 		
 	@Column(name="address")
+	@NotEmpty
 	private String address;
 		
 	@Column(name="email")
+	@NotEmpty
+	@Email
 	private String email;
 	
 	@Column(name="photo")
+	@NotEmpty
+	@URL
 	private String photo;
 	
 	@OneToMany (mappedBy = "employee", cascade=CascadeType.ALL, fetch = FetchType.LAZY )

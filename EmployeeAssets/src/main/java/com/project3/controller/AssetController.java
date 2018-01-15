@@ -1,7 +1,10 @@
 package com.project3.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,8 +43,11 @@ public class AssetController {
 	
 	//Save phone for an Employee
 	@RequestMapping(value="/savePhone", method=RequestMethod.POST)
-	public ModelAndView savePhone(@ModelAttribute("savePhoneForm")Phone phone, @ModelAttribute("employee")Employee employee ) 
+	public ModelAndView savePhone(@Valid @ModelAttribute("savePhoneForm")Phone phone, BindingResult result, @ModelAttribute("employee")Employee employee) 
 		{
+		/*if (result.hasErrors()) {
+            return new ModelAndView("redirect:/viewEmployees"); 
+        }*/
 		int id = (Integer) mv.getModel().get("id");
 		employee = employeeService.findEmployeeById(id);
 		employee.getPhones().add(phone);

@@ -2,8 +2,11 @@ package com.project3.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +31,11 @@ public class EmployeeController {
 	
 	//Save Employee data in the database
 	@RequestMapping(value="/saveEmployee", method=RequestMethod.POST)
-	public ModelAndView saveEmployee(@ModelAttribute("saveEmployeeForm")Employee employee) 
+	public ModelAndView saveEmployee(@Valid @ModelAttribute("saveEmployeeForm")Employee employee, BindingResult result) 
 		{
+		if (result.hasErrors()) {
+            return new ModelAndView("/addEmployee"); 
+        }
 		employeeService.save(employee);
 		return new ModelAndView("redirect:/"); 
 	}
@@ -60,9 +66,13 @@ public class EmployeeController {
 	
 	//Save Edited Employee after Id
 	@RequestMapping(value = "saveEditedEmployee", method = RequestMethod.POST)
-	public ModelAndView saveEdit(@ModelAttribute("editEmployeeForm") Employee employee) {
+	public String saveEdit(@Valid @ModelAttribute("editEmployeeForm") Employee employee, BindingResult result) {
+		if (result.hasErrors()) {
+           // return "editEmployee"+ employee.getId();
+			return "redirect:/editEmployee1";
+        }
 		employeeService.updateEmployee(employee);
-		return new ModelAndView("redirect:/viewEmployees");
+		return "redirect:/viewEmployees";
 	}
 	
 }
