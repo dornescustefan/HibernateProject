@@ -6,8 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="phones")
@@ -15,6 +16,8 @@ public class Phone {
 	@Id
 	@Column(name="imei")
 	@NotEmpty
+	@Size (min=15, max=15)
+	@Digits (integer=15, fraction=0)
 	private String phoneImei;
 	
 	@Column(name="make")

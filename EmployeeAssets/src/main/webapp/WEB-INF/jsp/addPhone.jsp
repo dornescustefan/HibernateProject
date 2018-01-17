@@ -17,14 +17,17 @@
     .error {
         color: red; font-weight: bold;
     }
+     body { padding-top: 60px;}
  </style>
 </head>
 <body>
 <div class="container" >
-<div class="col-sm-4"></div>
-<div class="col-sm-4">
-<h3>Add phone details for<br>
-${id} ${name}</h3>
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="jumbotron">
+<h3>Add phone details for:<br>
+${name}<br>
+System Id: ${id}</h3>
 <form:form action="savePhone" modelAttribute="savePhoneForm" method="POST" >
         <div class="form-group"> 
        		<label  >Phone make:</label>
@@ -46,9 +49,10 @@ ${id} ${name}</h3>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add phone</button>
 		</div>
-</form:form>            
+</form:form>
+</div>            
 </div>
-<div class="col-sm-4"></div>
+<div class="col-sm-3"></div>
 </div>
 </body>
 </html>

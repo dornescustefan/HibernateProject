@@ -13,13 +13,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <title>AddLaptop</title>
+<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+    body { padding-top: 60px;}
+</style>
 </head>
 <body>
 <div class="container" >
-<div class="col-sm-4"></div>
-<div class="col-sm-4">
-<h3>Add laptop for<br>
-${id} ${name}</h3>
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="jumbotron">
+<h3>Add laptop for:<br>
+${name}<br>
+System Id: ${id}</h3>
 <form:form action="saveLaptop" modelAttribute="saveLaptopForm" method="POST" >
         <div class="form-group"> 
        		<label  >Laptop make:</label>
@@ -31,17 +39,21 @@ ${id} ${name}</h3>
          	<option>Samsung</option>
          	<option>Sony Vaio</option>
          	</form:select>
+         	<form:errors path="make"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
        		<label >Laptop serial number:</label>
          	<form:input path="serialNumber" id="serialNumber" type="text" class="form-control"/>
+         	<form:errors path="serialNumber"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add laptop</button>
 		</div>
-</form:form>           
+</form:form>
+
+</div>           
 </div>
-<div class="col-sm-4"></div>
+<div class="col-sm-3"></div>
 </div>
 </body>
 </html>

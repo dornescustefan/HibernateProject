@@ -55,7 +55,7 @@ public class EmployeeController {
 	}
 	
 	//Edit existing Employee after Id
-	@RequestMapping(value="editEmployee{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/editEmployee{id}", method = RequestMethod.GET)
 	public ModelAndView editEmployee(@PathVariable int id) {
 		Employee anEmployee = employeeService.findEmployeeById(id);
 		ModelAndView modelAndView = new ModelAndView();
@@ -68,8 +68,7 @@ public class EmployeeController {
 	@RequestMapping(value = "saveEditedEmployee", method = RequestMethod.POST)
 	public String saveEdit(@Valid @ModelAttribute("editEmployeeForm") Employee employee, BindingResult result) {
 		if (result.hasErrors()) {
-           // return "editEmployee"+ employee.getId();
-			return "redirect:/editEmployee1";
+           return "editEmployee";
         }
 		employeeService.updateEmployee(employee);
 		return "redirect:/viewEmployees";

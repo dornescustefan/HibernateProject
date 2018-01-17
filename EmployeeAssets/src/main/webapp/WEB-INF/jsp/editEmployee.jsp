@@ -17,7 +17,7 @@
     .error {
         color: red; font-weight: bold;
     }
- </style>
+</style>
 </head>
 <body>
 <div class="container" >
@@ -28,6 +28,7 @@
 <h3>Edit employee:</h3><br>
 <form:form action="saveEditedEmployee" modelAttribute="editEmployeeForm" method="POST" >
 		<form:input path="id"  id="id"  type="hidden"/>
+		<form:errors path="id"  cssClass="error"/>
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
          	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>

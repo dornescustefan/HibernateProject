@@ -45,9 +45,9 @@ public class AssetController {
 	@RequestMapping(value="/savePhone", method=RequestMethod.POST)
 	public ModelAndView savePhone(@Valid @ModelAttribute("savePhoneForm")Phone phone, BindingResult result, @ModelAttribute("employee")Employee employee) 
 		{
-		/*if (result.hasErrors()) {
-            return new ModelAndView("redirect:/viewEmployees"); 
-        }*/
+		if (result.hasErrors()) {
+            return new ModelAndView("addPhone"); 
+        }
 		int id = (Integer) mv.getModel().get("id");
 		employee = employeeService.findEmployeeById(id);
 		employee.getPhones().add(phone);
@@ -75,8 +75,11 @@ public class AssetController {
 	
 	//Save LapTop for an Employee
 	@RequestMapping(value="/saveLaptop", method=RequestMethod.POST)
-	public ModelAndView saveLaptop(@ModelAttribute("saveLaptopForm")LapTop laptop, @ModelAttribute("anemployee")Employee anemployee ) 
+	public ModelAndView saveLaptop(@Valid @ModelAttribute("saveLaptopForm")LapTop laptop, BindingResult result, @ModelAttribute("anemployee")Employee anemployee ) 
 		{
+		if (result.hasErrors()) {
+            return new ModelAndView("addLaptop"); 
+        }
 		int id = (Integer) mv.getModel().get("id");
 		anemployee = employeeService.findEmployeeById(id);
 		anemployee.getLaptops().add(laptop);

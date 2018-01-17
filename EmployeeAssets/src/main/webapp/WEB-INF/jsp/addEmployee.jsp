@@ -17,15 +17,17 @@
     .error {
         color: red; font-weight: bold;
     }
+    body { padding-top: 60px; }
  </style>
 </head>
 <body>
 <div class="container" >
-<div class="col-sm-4"></div>
-<div class="col-sm-4">
-
-<h3>Add employee:</h3><br>
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="jumbotron">
+<h3>Add employee:</h3>
 <form:form action="saveEmployee" modelAttribute="saveEmployeeForm" method="POST" >
+        <form:input path="id"  id="id"  type="hidden"/>
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
          	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>
@@ -33,8 +35,8 @@
 		</div>
             
         <div class="form-group"> 
-       		<label  for="address" >Employee address:</label>
-         	<form:input type="text" path="address" id="address" class="form-control" placeholder="Employee Address" />
+       		<label  for="address" >Employee post code:</label>
+         	<form:input type="text" path="address" id="address" class="form-control" placeholder="Post Code" />
          	<form:errors path="address"  cssClass="error"/>
 		</div>    
         
@@ -51,8 +53,9 @@
 		</div>        
         <button type="submit" class="btn btn-default">Save employee</button>
  </form:form>
+ </div>
 </div>
-<div class="col-sm-4"></div>
+<div class="col-sm-3"></div>
 </div>
 </body>
 </html>
