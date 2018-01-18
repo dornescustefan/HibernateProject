@@ -17,7 +17,11 @@
     .error {
         color: red; font-weight: bold;
     }
-    body { padding-top: 60px; }
+    body { 
+    	padding-top: 60px; 
+    	background-color: #85144b; 
+    	font-family: 'Open Sans', sans-serif;
+    }
  </style>
 </head>
 <body>
@@ -52,7 +56,9 @@
 			<form:errors path="photo"  cssClass="error"/>
 		</div>        
         <button type="submit" class="btn btn-default">Save employee</button>
+        <a href="index.jsp"><button type="button" class="btn btn-default">Cancel</button></a>
  </form:form>
+
  </div>
 </div>
 <div class="col-sm-3"></div>

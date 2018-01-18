@@ -17,7 +17,11 @@
     .error {
         color: red; font-weight: bold;
     }
-     body { padding-top: 60px;}
+     body { 
+     	padding-top: 50px;
+     	background-color: #85144b; 
+    	font-family: 'Open Sans', sans-serif;
+     }
  </style>
 </head>
 <body>
@@ -25,10 +29,14 @@
 <div class="col-sm-3"></div>
 <div class="col-sm-6">
 <div class="jumbotron">
-<h3>Add phone details for:<br>
-${name}<br>
-System Id: ${id}</h3>
+
+
 <form:form action="savePhone" modelAttribute="savePhoneForm" method="POST" >
+	 <div class="form-group">
+			<label>Add phone details for:</label><br>
+			<label>${name}</label><br>
+			<label>System Id: ${id}</label>
+	</div>
         <div class="form-group"> 
        		<label  >Phone make:</label>
          	<form:select path="phoneMake" id="phoneMake" type="text" class="form-control">
@@ -42,13 +50,14 @@ System Id: ${id}</h3>
 			<form:errors path="phoneMake"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
-       		<label >Phone imei:</label>
+       		<label >Phone imei(15 digits):</label>
          	<form:input path="phoneImei" id="phoneImei" type="text" class="form-control" />
          	<form:errors path="phoneImei"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add phone</button>
-		</div>
+       		<a href="viewEmployees"><button type="button" class="btn btn-default">Cancel</button></a>
+ 		</div>
 </form:form>
 </div>            
 </div>

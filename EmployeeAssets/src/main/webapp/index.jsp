@@ -10,7 +10,10 @@
 EmployeeAssets
 </title>
 <style>
-      body { padding-top: 60px;}
+      body { padding-top: 60px;
+      background-color: #85144b; 
+      font-family: 'Open Sans', sans-serif;
+      }
 </style>
 </head>
 <body>
@@ -21,7 +24,7 @@ EmployeeAssets
             Welcome to Employee Asset manager!
          </h1>
           <p>
-          You can start by adding new Employee or View/Edit existing ones.            
+          You can start by adding new Employee or View/Edit/Delete existing ones.            
           </p>
    </div>
   	<h2><a href="addEmployee"><button type="submit" class="btn btn-default">Add Employee</button></a>

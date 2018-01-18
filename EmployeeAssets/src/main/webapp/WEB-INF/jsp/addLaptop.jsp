@@ -17,7 +17,11 @@
     .error {
         color: red; font-weight: bold;
     }
-    body { padding-top: 60px;}
+    body {
+    		padding-top: 50px;
+   	    	background-color: #85144b; 
+    		font-family: 'Open Sans', sans-serif;
+    		}
 </style>
 </head>
 <body>
@@ -25,10 +29,12 @@
 <div class="col-sm-3"></div>
 <div class="col-sm-6">
 <div class="jumbotron">
-<h3>Add laptop for:<br>
-${name}<br>
-System Id: ${id}</h3>
 <form:form action="saveLaptop" modelAttribute="saveLaptopForm" method="POST" >
+        <div class="form-group">
+			<label>Add laptop details for:</label><br>
+			<label>${name}</label><br>
+			<label>System Id: ${id}</label>
+		</div>
         <div class="form-group"> 
        		<label  >Laptop make:</label>
          	<form:select path="make" id="make" type="text" class="form-control">
@@ -48,6 +54,7 @@ System Id: ${id}</h3>
 		</div>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add laptop</button>
+       		<a href="viewEmployees"><button type="button" class="btn btn-default">Cancel</button></a>
 		</div>
 </form:form>
 

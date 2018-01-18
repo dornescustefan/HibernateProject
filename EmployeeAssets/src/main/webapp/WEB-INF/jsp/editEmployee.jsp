@@ -12,31 +12,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>AddEmployee</title>
+<title>EditEmployee</title>
 <style>
     .error {
         color: red; font-weight: bold;
+    }
+    body { 
+    	padding-top: 50px; 
+    	background-color: #85144b; 
+    	font-family: 'Open Sans', sans-serif;
     }
 </style>
 </head>
 <body>
 <div class="container" >
-<div class="col-sm-4"></div>
-<div class="col-sm-4">
-
-
-<h3>Edit employee:</h3><br>
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<div class="jumbotron">
 <form:form action="saveEditedEmployee" modelAttribute="editEmployeeForm" method="POST" >
+		<h3>Edit employee data:</h3>
 		<form:input path="id"  id="id"  type="hidden"/>
 		<form:errors path="id"  cssClass="error"/>
         <div class="form-group"> 
-       		<label  for="name" >Employee name:</label>
+       		<form:label  path="name" >Employee name:</form:label>
          	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>
          	<form:errors path="name"  cssClass="error"/>
 		</div>
             
         <div class="form-group"> 
-       		<label  for="address" >Employee address:</label>
+       		<label  for="address" >Employee post code:</label>
          	<form:input type="text" path="address" id="address" class="form-control" placeholder="Employee Address" />
          	<form:errors path="address"  cssClass="error"/>
 		</div>    
@@ -55,7 +59,8 @@
         <button type="submit" class="btn btn-default">Save employee</button>
  </form:form>
 </div>
-<div class="col-sm-4"></div>
+</div>
+<div class="col-sm-3"></div>
 </div>
 </body>
 </html>

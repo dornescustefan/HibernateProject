@@ -14,20 +14,47 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>View employees</title>
+		<style>
+      body { padding-top: 50px;
+      		 
+      		 font-family: 'Open Sans', sans-serif;
+      		 
+      		}
+      		
+      		.navbar-inverse {
+      		background-color: #85144b; 
+      		border-color: #85144b;
+      		}
+		</style>
 	</head>
 
 <body>
-<table class="table table-bordered table-hover">  
+<div class="container-fluid">
+
+<nav  class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.jsp"><i class="fa fa-home" aria-hidden="true" style="font-size: 120%;"></i>
+      </a>
+    </div>
+    <form action="searchEmployee" class="navbar-form navbar-left">
+      <div class="form-group">
+        <input name="searchedValue"  type="text" class="form-control" placeholder="Search by name">
+      </div>
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </div>
+  </nav>
+<table class="table table-bordered">  
 		<tr >
 			<th>ID</th>
 			<th>PHOTO</th>
 			<th>NAME</th>
-			<th>ADDRESS</th>
+			<th>POST CODE</th>
 			<th>EMAIL</th>
 			<th>ADD ASSETS</th>
-			<th>EDIT</th>
+			<th>EDIT/DELETE</th>
 			<th>ASSETS</th>
-			
 		</tr>  
    <c:forEach var="employees"	 items="${employeeList}"> 
     <tr>  
@@ -44,7 +71,7 @@
    		</td>
    		
    	<td>
-					<table class="table table-bordered">
+					<table class="table table-bordered table-hover">
 						<tr>
 							<th>Phone Make</th><th>Phone IMEI</th><th>Remove phone</th>
 						</tr>
@@ -73,5 +100,6 @@
    	</tr>	
    </c:forEach>  
  </table> 
+ </div>
 </body>
 </html>

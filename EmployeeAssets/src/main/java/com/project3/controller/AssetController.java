@@ -53,7 +53,7 @@ public class AssetController {
 		employee.getPhones().add(phone);
 		phone.setEmployee(employee);
 		employeeService.save(employee);
-		return new ModelAndView("redirect:/"); 
+		return new ModelAndView("redirect:/viewEmployees"); 
 	}
 	
 	//Delete phone
