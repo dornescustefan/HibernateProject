@@ -44,4 +44,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 				
 		}
 
+		public List<Employee> findEmployeeByName(String searchedEmployee) {
+			// TODO Auto-generated method stub
+			return employeeRepository.findEmployeeByName(searchedEmployee);
+		}
+
 }

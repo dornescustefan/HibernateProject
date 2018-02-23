@@ -48,7 +48,7 @@
          	<form:errors path="make"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
-       		<label >Laptop serial number:</label>
+       		<label >Laptop serial number(5-10 character):</label>
          	<form:input path="serialNumber" id="serialNumber" type="text" class="form-control"/>
          	<form:errors path="serialNumber"  cssClass="error"/>
 		</div>

@@ -2,6 +2,8 @@ package com.project3.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +74,14 @@ public class EmployeeController {
         }
 		employeeService.updateEmployee(employee);
 		return "redirect:/viewEmployees";
+	}
+	
+	//Search Employee by Name
+	@RequestMapping(value = "/searchEmployee")
+	public ModelAndView searchEmployee(HttpServletRequest request, HttpServletResponse response) {
+		String searchedValue = request.getParameter("searchedValue");
+		List<Employee> employeeList = employeeService.findEmployeeByName(searchedValue);
+		return new ModelAndView("viewEmployees", "employeeList", employeeList);
 	}
 	
 }

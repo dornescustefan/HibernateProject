@@ -11,4 +11,5 @@ public interface EmployeeService {
     Employee findEmployeeById(int id);
     Employee save(Employee employee);
 	void updateEmployee(Employee employee);
+	List<Employee> findEmployeeByName(String searchedEmployee);
 }

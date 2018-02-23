@@ -16,7 +16,7 @@ public class LapTop {
 	@Id
 	@Column(name="serial_number")
 	@NotEmpty
-	@Size (min=15, max=20)
+	@Size (min=5, max=10)
 	//@Digits (integer=15, fraction=0)
 	private String serialNumber;
 	
