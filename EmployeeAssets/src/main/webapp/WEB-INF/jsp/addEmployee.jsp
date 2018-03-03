@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>   
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
 <html>
@@ -34,13 +35,13 @@
         <form:input path="id"  id="id"  type="hidden"/>
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
-         	<form:input path="name" id="name" type="text" class="form-control" placeholder="FirstName LastName"/>
+         	<form:input path="name" id="name" type="text" class="form-control" placeholder="Name"/>
          	<form:errors path="name"  cssClass="error"/>
 		</div>
             
         <div class="form-group"> 
        		<label  for="address" >Employee post code:</label>
-         	<form:input type="text" path="address" id="address" class="form-control" placeholder="Post Code" />
+       		<form:input type="text" path="address" id="address" class="form-control" placeholder="Post Code" />
          	<form:errors path="address"  cssClass="error"/>
 		</div>    
         

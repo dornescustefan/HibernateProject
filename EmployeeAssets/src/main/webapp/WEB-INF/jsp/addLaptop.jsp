@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
 <html>
 <head>
@@ -51,7 +52,7 @@
        		<label >Laptop serial number(5-10 character):</label>
          	<form:input path="serialNumber" id="serialNumber" type="text" class="form-control"/>
          	<form:errors path="serialNumber"  cssClass="error"/>
-		</div>
+        </div>
 		<div class="form-group"> 
        		<button type="submit" class="btn btn-default">Add laptop</button>
        		<a href="viewEmployees"><button type="button" class="btn btn-default">Cancel</button></a>

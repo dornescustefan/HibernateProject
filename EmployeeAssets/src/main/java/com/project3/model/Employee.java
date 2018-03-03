@@ -32,7 +32,7 @@ public class Employee {
 		
 	@Column(name="address")
 	@NotEmpty
-	@Pattern(regexp = "^[a-zA-Z]{1,2}([0-9]{1,2}|[0-9][a-zA-Z])\\s*[0-9][a-zA-Z]{2}$")
+	@Pattern(regexp = "^[a-zA-Z]{1,2}([0-9]{1,2}|[0-9][a-zA-Z])\\s*[0-9][a-zA-Z]{2}$", message="must be a valid UK post code")
 	private String address;
 		
 	@Column(name="email")

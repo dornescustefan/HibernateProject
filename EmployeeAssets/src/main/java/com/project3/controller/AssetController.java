@@ -94,5 +94,4 @@ public class AssetController {
 			lapTopService.deleteLapTop(serialNumber);
 			return new ModelAndView("redirect:/viewEmployees"); 
 		}
-	
 }

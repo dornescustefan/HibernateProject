@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
-   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>     
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
 <html>
 <head>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -23,6 +24,27 @@
     	font-family: 'Open Sans', sans-serif;
      }
  </style>
+ 
+ <script type="text/javascript">
+		$(document).ready(
+			function() {
+				$.getJSON('<spring:url value="phonemakes.json"/>', {
+					ajax : 'true'
+				}, function(data){
+					var html = '<option selected disabled >--Please select a phone make--</option>';
+					var len = data.length;
+					for (var i = 0; i < len; i++) {
+						html += '<option value="' + data[i].phoneMake + '">'
+								+ data[i].phoneMake + '</option>';
+					}
+					html += '</option>';
+					
+					$('#phoneMake').html(html);
+				});
+				
+			});
+</script>
+ 
 </head>
 <body>
 <div class="container" >
@@ -39,16 +61,9 @@
 	</div>
         <div class="form-group"> 
        		<label  >Phone make:</label>
-         	<form:select path="phoneMake" id="phoneMake" type="text" class="form-control">
-         	<option selected disabled >--Please select a phone make--</option>
-         	<option >Nokia</option>
-         	<option >Htc</option>
-			<option >Samsung</option>
-			<option >Sony ericsson</option>
-			<option >Iphone</option>
-			</form:select>
-			<form:errors path="phoneMake"  cssClass="error"/>
-		</div>
+         	<form:select path="phoneMake" id="phoneMake" type="text" class="form-control"/>
+         	<form:errors path="phoneMake"  cssClass="error"/>
+        </div>
 		<div class="form-group"> 
        		<label >Phone imei(15 digits):</label>
          	<form:input path="phoneImei" id="phoneImei" type="text" class="form-control" />

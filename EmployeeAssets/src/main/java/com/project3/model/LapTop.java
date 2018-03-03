@@ -16,7 +16,7 @@ public class LapTop {
 	@Id
 	@Column(name="serial_number")
 	@NotEmpty
-	@Size (min=5, max=10)
+	@Size (min=5, max=10, message= "must be between 5 and 10 digits long")
 	//@Digits (integer=15, fraction=0)
 	private String serialNumber;
 	

@@ -16,8 +16,8 @@ public class Phone {
 	@Id
 	@Column(name="imei")
 	@NotEmpty
-	@Size (min=15, max=15)
-	@Digits (integer=15, fraction=0)
+	@Size (min=15, max=15, message= "must be 15 digits long")
+	@Digits (integer=15, fraction=0, message= "")
 	private String phoneImei;
 	
 	@Column(name="make")
