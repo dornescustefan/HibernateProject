@@ -46,6 +46,10 @@ public class Phone {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+	@Override
+	public String toString() {
+		return "Phone [phoneImei=" + phoneImei + ", phoneMake=" + phoneMake + ", employee=" + employee + "]";
+	}
 	
     
 	
