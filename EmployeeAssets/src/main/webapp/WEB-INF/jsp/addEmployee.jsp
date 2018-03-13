@@ -53,6 +53,7 @@
 		
 		 <div class="form-group"> 
        		<label  for="email" >Employee photo URL:</label>
+       		<label>e.g. http://stefandornescu.co.uk/img/MRemployee.png </label>
          	<form:input type="text" path="photo" id="photo" class="form-control"  placeholder="Employee Photo URL" />
 			<form:errors path="photo"  cssClass="error"/>
 		</div>        
