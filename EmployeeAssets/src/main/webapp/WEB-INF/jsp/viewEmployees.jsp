@@ -26,6 +26,13 @@
       		border-color: #85144b;
       		}
 		</style>
+		<script type="text/javascript">
+		function upperCase(a){
+		    setTimeout(function(){
+		        a.value = a.value.toUpperCase();
+		    }, 1);
+		}
+		</script>
 	</head>
 
 <body>
@@ -34,14 +41,14 @@
 <nav  class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.jsp"><i class="fa fa-home" aria-hidden="true" style="font-size: 120%;"></i>
+      <a class="navbar-brand" href="index.jsp"><i class="fa fa-home" aria-hidden="true" style="font-size: 150%; color:#337ab7;"></i>
       </a>
     </div>
     <form action="searchEmployee" class="navbar-form navbar-left">
       <div class="form-group">
-        <input name="searchedValue"  type="text" class="form-control" placeholder="Search by name">
+        <input name="searchedValue"  type="text" class="form-control" placeholder="Search by name" onkeydown="upperCase(this)" >
       </div>
-      <button type="submit" class="btn">Search</button>
+      <button type="submit" class="btn btn-info">Search</button>
     </form>
   </div>
   </nav>
@@ -63,11 +70,11 @@
    		<td>${employees.name}</td>
      	<td>${employees.address}</td>
    		<td>${employees.email}</td> 
-   		<td><a href="addPhone${employees.id}"><input type="button" value = "Add phone" class="btn" /><br><br>
-   		    <a href="addLaptop${employees.id}"><input type="button" value = "Add laptop" class="btn" />
+   		<td><a href="addPhone${employees.id}"><input type="button" value = "Add phone" class="btn btn-primary" /><br><br>
+   		    <a href="addLaptop${employees.id}"><input type="button" value = "Add laptop" class="btn btn-primary" />
    		</td>
-   		<td><a href="delete${employees.id}"><input type="button" value = "Delete Employee" class="btn" /><br><br>
-   			<a href="editEmployee${employees.id}"><input type="button" value = "Edit Employee" class="btn" />
+   		<td><a href="delete${employees.id}"><input type="button" value = "Delete Employee" class="btn btn-danger" /><br><br>
+   			<a href="editEmployee${employees.id}"><input type="button" value = "Edit Employee" class="btn btn-warning" />
    		</td>
    		
    	<td>
@@ -79,7 +86,7 @@
 							<tr>
 								<td>${phones.phoneMake}</td>
 								<td>${phones.phoneImei}</td>
-								<td><a href="deletePhone${phones.phoneImei}"><input type="button" value = "Remove phone" class="btn" /></a></td>
+								<td><a href="deletePhone${phones.phoneImei}"><input type="button" value = "Remove phone" class="btn btn-danger" /></a></td>
 							</tr>
 						</c:forEach>
 						
@@ -90,7 +97,7 @@
 							<tr>
 								<td>${laptops.make}</td>
 								<td>${laptops.serialNumber}</td>
-								<td><a href="deleteLapTop${laptops.serialNumber}"><input type="button" value = "Remove laptop" class="btn" /></a></td>
+								<td><a href="deleteLapTop${laptops.serialNumber}"><input type="button" value = "Remove laptop" class="btn btn-danger" /></a></td>
 							</tr>
 						</c:forEach>
 						

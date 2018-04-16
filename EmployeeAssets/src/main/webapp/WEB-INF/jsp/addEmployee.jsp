@@ -24,6 +24,13 @@
     	font-family: 'Open Sans', sans-serif;
     }
  </style>
+ <script type="text/javascript">
+ function upperCase(a){
+	    setTimeout(function(){
+	        a.value = a.value.toUpperCase();
+	    }, 1);
+	}
+</script>
 </head>
 <body>
 <div class="container" >
@@ -35,13 +42,13 @@
         <form:input path="id"  id="id"  type="hidden"/>
         <div class="form-group"> 
        		<label  for="name" >Employee name:</label>
-         	<form:input path="name" id="name" type="text" class="form-control" placeholder="Name"/>
+         	<form:input path="name" id="name" type="text" class="form-control" placeholder="Name" onkeydown="upperCase(this)" />
          	<form:errors path="name"  cssClass="error"/>
 		</div>
             
         <div class="form-group"> 
        		<label  for="address" >Employee post code:</label>
-       		<form:input type="text" path="address" id="address" class="form-control" placeholder="Post Code" />
+       		<form:input type="text" path="address" id="address" class="form-control" placeholder="Post Code" onkeydown="upperCase(this)" />
          	<form:errors path="address"  cssClass="error"/>
 		</div>    
         
@@ -57,8 +64,8 @@
          	<form:input type="text" path="photo" id="photo" class="form-control"  placeholder="Employee Photo URL" />
 			<form:errors path="photo"  cssClass="error"/>
 		</div>        
-        <button type="submit" class="btn btn-default">Save employee</button>
-        <a href="index.jsp"><button type="button" class="btn btn-default">Cancel</button></a>
+        <button type="submit" class="btn btn-primary">Save employee</button>
+        <a href="index.jsp"><button type="button" class="btn btn-primary">Cancel</button></a>
  </form:form>
 
  </div>

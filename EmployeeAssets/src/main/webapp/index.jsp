@@ -27,8 +27,8 @@ EmployeeAssets
           You can start by adding new Employee or View/Edit/Delete existing ones.            
           </p>
    </div>
-  	<h2><a href="addEmployee"><button type="submit" class="btn btn-default">Add Employee</button></a>
-	<a href="viewEmployees"><button type="submit" class="btn btn-default">View Employees</button></a></h2>
+  	<h2><a href="addEmployee"><button type="submit" class="btn btn-lg btn-primary">Add Employee</button></a>
+	<a href="viewEmployees"><button type="submit" class="btn btn-lg btn-primary">View Employees</button></a></h2>
   </div>
 </div>
 </body>

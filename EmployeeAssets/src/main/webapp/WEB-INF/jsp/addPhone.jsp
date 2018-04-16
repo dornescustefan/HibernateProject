@@ -70,8 +70,8 @@
          	<form:errors path="phoneImei"  cssClass="error"/>
 		</div>
 		<div class="form-group"> 
-       		<button type="submit" class="btn btn-default">Add phone</button>
-       		<a href="viewEmployees"><button type="button" class="btn btn-default">Cancel</button></a>
+       		<button type="submit" class="btn btn-primary">Add phone</button>
+       		<a href="viewEmployees"><button type="button" class="btn btn-primary">Cancel</button></a>
  		</div>
 </form:form>
 </div>            

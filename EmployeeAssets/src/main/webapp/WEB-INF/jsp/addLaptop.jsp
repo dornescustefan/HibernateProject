@@ -54,8 +54,8 @@
          	<form:errors path="serialNumber"  cssClass="error"/>
         </div>
 		<div class="form-group"> 
-       		<button type="submit" class="btn btn-default">Add laptop</button>
-       		<a href="viewEmployees"><button type="button" class="btn btn-default">Cancel</button></a>
+       		<button type="submit" class="btn btn-primary">Add laptop</button>
+       		<a href="viewEmployees"><button type="button" class="btn btn-primary">Cancel</button></a>
 		</div>
 </form:form>
 
